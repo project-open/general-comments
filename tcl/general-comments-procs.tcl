@@ -187,7 +187,7 @@ ad_proc -private general_comments_print_comment {
                 if { $mime_type == "image_gif" || $mime_type == "image/jpeg" } {
                     append attachments_html "(<a href=\"${package_url}view-image?image_id=$item_id&return_url=$return_url\">$name</a>)\n"
                 } else {
-                    append attachments_html "(<a href=\"${package_url}file-download?item_id=$item_id\">$name</a>)\n"
+                    append attachments_html "(<a href=\"[export_vars -base "${package_url}file-download" {item_id}]\">$name</a>)\n"
                 }
             }
 
