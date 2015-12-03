@@ -1,12 +1,12 @@
 <master>
-<property name="title">@page_title;noquote@</property>
-<property name="context">@context;noquote@</property>
+<property name="doc(title)">@page_title;literal@</property>
+<property name="context">@context;literal@</property>
 
 
 <p>
-<table border=1 cellspacing=0 cellpadding=5>
+<table border="1" cellspacing="0" cellpadding="5">
 <tr>
-  <td colspan=2 align=center>#general-comments.lt_Current_values_for_Ge#</td></tr>
+  <td colspan="2" align="center">#general-comments.lt_Current_values_for_Ge#</td></tr>
 <tr>
   <td>package_id</td>
   <td>
@@ -32,7 +32,7 @@
       <i>#general-comments.not_set#</i>
     </if>
     <else>
-      <a href="/admin/site-map/parameter-set?package_id=@package_id@">
+      <a href="@params_url@">
       @auto_approve_comments_p@</a>
     </else></td></tr>
 <tr>
@@ -42,7 +42,7 @@
       <i>#general-comments.not_set#</i>
     </if>
     <else>
-      <a href="/admin/site-map/parameter-set?package_id=@package_id@">
+      <a href="@params_url@">
       @allow_file_attachments_p@</a>
     </else></td></tr>
 <tr>
@@ -52,7 +52,7 @@
       <i>#general-comments.not_set#</i>
     </if>
     <else>
-      <a href="/admin/site-map/parameter-set?package_id=@package_id@">
+      <a href="@params_url@">
       @allow_link_attachments_p@</a>
     </else></td></tr>
 <tr>
@@ -62,7 +62,7 @@
       <i>#general-comments.not_set#</i>
     </if>
     <else>
-      <a href="/admin/site-map/parameter-set?package_id=@package_id@">
+      <a href="@params_url@">
       @max_file_size@</a>
     </else></td></tr>
 </table>
@@ -80,14 +80,14 @@
   </ul>
   <p>
   <h3>#general-comments.Full_Comments#</h3>
-    <blockquote>
+
     <if @full_comments@ eq "">
       <li>#general-comments.none#
     </if>
     <else>
       @full_comments@
     </else>
-    </blockquote>
+
   <p>
   @link@
 </if>

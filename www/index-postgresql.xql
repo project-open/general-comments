@@ -12,7 +12,6 @@
            o.creation_user, 
 	   case when i.live_revision=null then 0 else 1 end as live_version_p,
 	   case when i.live_revision=r.revision_id then 0 else 1 end as approved_p,
-           to_char(o.creation_date, 'MM-DD-YYYY HH12:MI:AM') as pretty_date,
            o.creation_date    
       from general_comments g,
            cr_items i,
@@ -23,8 +22,7 @@
            r.revision_id = i.latest_revision and 
            o.creation_user = :user_id
           [ad_dimensional_sql $dimensional]) as unordered
-    [ad_order_by_from_sort_spec $orderby $table_def]
-
+     [template::list::orderby_clause -orderby -name comments_list]
       </querytext>
 </fullquery>
 

@@ -12,7 +12,7 @@
            o.creation_user, 
            decode(i.live_revision,null,0,1) as live_version_p,
            decode(i.live_revision,r.revision_id,1,0) as approved_p, 
-           to_char(o.creation_date, 'MM-DD-YYYY HH12:MI:AM') as pretty_date
+           o.creation_date
       from general_comments g,
            cr_items i,
            cr_revisions r,
@@ -22,7 +22,7 @@
            r.revision_id = content_item.get_latest_revision(g.comment_id) and
            o.creation_user = :user_id
           [ad_dimensional_sql $dimensional]
-    [ad_order_by_from_sort_spec $orderby $table_def]
+     [template::list::orderby_clause -orderby -name comments_list]
      
       </querytext>
 </fullquery>

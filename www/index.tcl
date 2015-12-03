@@ -7,8 +7,10 @@ ad_page_contract {
     @author Pascal Scheffers (pascal@scheffers.net)
     @creation-date 2000-10-12
     @cvs-id $Id$
-} { 
-    {orderby {pretty_date*} }
+} -query { 
+    {orderby:optional}
+    {approval "any"}
+    {modified "any"}
 } -properties {
     page_title:onevalue
     context:onevalue
@@ -17,11 +19,11 @@ ad_page_contract {
 }
 
 # authenticate the user
-set user_id [ad_maybe_redirect_for_registration]
+set user_id [auth::require_login]
 
 # check for admin privileges
 set package_id [ad_conn package_id]
-set admin_p [ad_permission_p $package_id admin]
+set admin_p [permission::permission_p -object_id $package_id -privilege admin]
 
 # return_url to be passed to various helper pages so that we return to
 # this page with the proper parameters
@@ -43,46 +45,46 @@ set dimensional [list \
 ]
 set dimensional_bar [ad_dimensional $dimensional]
 
-# ad_table definition
-set table_def [list \
-    [list num "[_ general-comments.Num]" {} {<td>$Tcount</td>}] \
-    [list comment_id "[_ general-comments.ID]" {} \
-            {<td><a href="view-comment?comment_id=$comment_id">$comment_id</a></td>}] \
-    [list title "[_ general-comments.Title_1]" {} {}] \
-    [list approved_p "[_ general-comments.Approved]" {} 01] \
-    [list live_version_p "[_ general-comments.Has_live_version]" {} 01] \
-    [list pretty_date "[_ general-comments.Last_Modified]" {creation_date $order} {}] \
-]
-         
-# sql to retrieve comments
-set sql "
-    select g.comment_id,
-           r.title, 
-           acs_object.name(o.creation_user) as author,
-           o.creation_user, 
-           decode(i.live_revision,null,0,1) as live_version_p,
-           decode(i.live_revision,r.revision_id,1,0) as approved_p, 
-           to_char(o.creation_date, 'MM-DD-YYYY HH12:MI:AM') as pretty_date
-      from general_comments g,
-           cr_items i,
-           cr_revisions r,
-           acs_objects o
-     where g.comment_id = i.item_id and
-           r.revision_id = o.object_id and
-           r.revision_id = content_item.get_latest_revision(g.comment_id) and
-           o.creation_user = :user_id
-          [ad_dimensional_sql $dimensional]
-    [ad_order_by_from_sort_spec $orderby $table_def]
-"
+template::list::create -name comments_list \
+    -multirow comments \
+    -no_data "#general-comments.lt_No_comments_available#" \
+    -html {style "margin: 0 auto"} \
+    -elements {
+	counter {
+	    label "#general-comments.Num#" 
+	}
+        comment_id {
+	    label "#general-comments.ID#"
+	    display_template {<a href="view-comment?comment_id=@comments.comment_id@">@comments.comment_id@</a>}
+	    orderby {comment_id}
+	}
+	title {
+	    label "#general-comments.Title_1#"
+	    orderby {title}
+	}
+	approved_p {
+	    label "#general-comments.Approved#"
+	    html {align center}
+	    orderby {approved_p}
+	}
+	live_version_p {
+	    label "#general-comments.Has_live_version#" 
+	    html {align center}
+	    orderby {approved_p}
+	}
+	pretty_date {
+	    label "#general-comments.Last_Modified#"
+	    orderby {creation_date}
+	} 
+    } -filters {approval {} modified {}} 
 
-# create the table to display the comments
-set bind_ns_set [ad_tcl_vars_to_ns_set user_id]
-set extra_var_list [list return_url $return_url]
-set comments_table [ad_table -Torderby $orderby \
-                             -Tmissing_text "<i>[_ general-comments.lt_No_comments_available]</i>" \
-                             -Textra_vars $extra_var_list \
-                             -bind $bind_ns_set \
-                             comments_select $sql $table_def]
+set count 0
+db_multirow -extend {user_id return_url counter pretty_date} comments comments_select {} {
+    set counter [incr count]
+    set pretty_date [lc_time_fmt $creation_date "%x %X"]
+    set approved_p [util_PrettyTclBoolean $approved_p]
+    set live_version_p [util_PrettyTclBoolean $live_version_p]
+}
 
 set page_title "[_ general-comments.General_Comments]"
 set context {}

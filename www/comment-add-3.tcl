@@ -8,88 +8,47 @@ ad_page_contract {
     @creation-date 2000-10-12
     @cvs-id $Id$
 } {
-    comment_id:integer,notnull
-    object_id:integer,notnull
+    comment_id:naturalnum,notnull
+    object_id:naturalnum,notnull
     title:notnull
     content:html,notnull
     comment_mime_type
-    { context_id "$object_id" }
+    { context_id:naturalnum "$object_id" }
     { category "" }
     { return_url "" }
-    { attach_p "f" }
+    { attach_p:boolean "f" }
 }    
 
+# This authentication actually is not necessary anymore due to the fact that we already check for the permission
+# afterwards, so it should be enough to query the user_id from the connection to allow anonymous users who have
+# create permissions to access the site.
+
 # authenticate the user
-set user_id [ad_maybe_redirect_for_registration]
+# set user_id [auth::require_login]
+
+set user_id [ad_conn user_id]
 
 # check to see if the user can create comments on this object
-ad_require_permission $object_id general_comments_create
+permission::require_permission -object_id $object_id -privilege general_comments_create
 
 # insert the comment into the database
 set creation_ip [ad_conn peeraddr]
-set is_live [ad_parameter AutoApproveCommentsP {general-comments} {t}]
-db_transaction {
-    db_exec_plsql insert_comment {
-        begin
-            :1 := acs_message.new (
-                message_id    => :comment_id,
-                title         => :title,
-                mime_type     => :comment_mime_type,
-                data          => empty_blob(),
-                context_id    => :context_id,
-                creation_user => :user_id, 
-                creation_ip   => :creation_ip,
-                is_live       => :is_live
-            );
-        end;
-    }
+set is_live [parameter::get -parameter AutoApproveCommentsP -default {t}]
 
-    db_dml add_entry {
-        insert into general_comments
-            (comment_id,
-             object_id,
-             category)
-        values
-            (:comment_id,
-             :object_id,
-             :category)
-    }
+general_comment_new \
+    -object_id $object_id \
+    -comment_id $comment_id \
+    -title $title \
+    -comment_mime_type $comment_mime_type \
+    -context_id $context_id \
+    -user_id $user_id \
+    -creation_ip $creation_ip \
+    -is_live $is_live \
+    -category $category \
+    -content $content
 
-    db_1row get_revision {
-        select content_item.get_latest_revision(:comment_id) as revision_id
-        from dual
-    }  
-
-    db_dml set_content {
-        update cr_revisions
-           set content = empty_blob()
-         where revision_id = :revision_id
-     returning content into :1
-    } -blobs [list $content]
-
-    # Grant the user sufficient permissions to 
-    # created comment. This is done here to ensure that
-    # a fail on permissions granting will not leave
-    # the comment with incorrect permissions. 
-    db_exec_plsql grant_permission {
-        begin
-            acs_permission.grant_permission (
-                object_id  => :comment_id,
-                grantee_id => :user_id,
-                privilege  => 'read'
-            );
-            acs_permission.grant_permission (
-                object_id  => :comment_id,
-                grantee_id => :user_id,
-                privilege  => 'write'
-            );
-
-        end;
-    }
-}
-
-if { [string equal $attach_p "f"] && ![empty_string_p $return_url] } {
+if { $attach_p == "f" && $return_url ne "" } {
     ad_returnredirect $return_url
 } else {
-    ad_returnredirect "view-comment?[export_vars { comment_id return_url }]"
+    ad_returnredirect [export_vars -base view-comment { comment_id return_url }]
 }

@@ -28,11 +28,7 @@ db_dml delete_image_attachments {
 # Only need to call on acs_message.delete since
 # deletion of row from general_comments table
 # relies on "on delete cascade"
-db_exec_plsql delete_comment {
-    begin
-        acs_message.del(:comment_id);
-    end;
-}
+db_exec_plsql delete_comment {}
 
 ad_returnredirect $return_url
 
