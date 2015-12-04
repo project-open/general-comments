@@ -48,7 +48,7 @@ template::list::create -name comments_list \
 	}
         comment_id {
 	    label "#general-comments.ID#"
-	    display_template {<a href="view-comment?comment_id=@comments.comment_id@">@comments.comment_id@</a>}
+	    display_template {<a href="../view-comment?comment_id=@comments.comment_id@">@comments.comment_id@</a>}
 	    orderby {comment_id}
 	}
 	title {
@@ -92,3 +92,9 @@ set context {}
 
 ad_return_template
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:
