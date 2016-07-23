@@ -19,6 +19,7 @@
   <msg key="Cancel">Abbrechen</msg>
   <msg key="Comment">Kommentar:</msg>
   <msg key="Comments">Kommentare</msg>
+  <msg key="Comments_of">Kommentare von %user_name%</msg>
   <msg key="Confirm">Bestätigen</msg>
   <msg key="Confirm_comment">Kommentar bestätigen</msg>
   <msg key="Confirm_comment_on">Kommentar bestätigen zu</msg>
