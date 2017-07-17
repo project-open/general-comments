@@ -38,7 +38,6 @@
   <msg key="gc_is_not_mounted">&#39;Allgemeine Kommentare&#39; ist nicht geladen.</msg>
   <msg key="General_Comments">Allgemeine Kommentare</msg>
   <msg key="Go_back_to_comment">Zurück zum Kommentar</msg>
-  <msg key="Has_live_version">Aktive Version vorhanden</msg>
   <msg key="HTML">HTML</msg>
   <msg key="ID">ID</msg>
   <msg key="if_general_comments_not_mounted">If &lt;code&gt;general-comments&lt;/code&gt; is not mounted and calls are made to &lt;code&gt;general_comments_get_comments&lt;/code&gt; or &lt;code&gt;general_comments_create_link&lt;/code&gt; , then an error will be logged. This is because these calls output hyperlinks that need to reference a mounted &lt;code&gt;general-comments&lt;/code&gt; package instance. </msg>

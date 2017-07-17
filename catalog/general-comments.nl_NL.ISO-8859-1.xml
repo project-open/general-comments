@@ -37,7 +37,6 @@
   <msg key="gc_is_not_mounted">Algemene Opmerkingen module(General Comments) is niet geinstalleerd</msg>
   <msg key="General_Comments">Algemene Opmerkingen</msg>
   <msg key="Go_back_to_comment">Ga terug naar opmerking</msg>
-  <msg key="Has_live_version">Openbare versie is aanwezig</msg>
   <msg key="HTML">HTML</msg>
   <msg key="ID">ID#</msg>
   <msg key="if_general_comments_not_mounted">Als &lt;code&gt;general-comments&lt;/code&gt; niet geactiveerd is en er toch een beroep wordt gedaan op &lt;code&gt;general_comments_get_comments&lt;/code&gt; of &lt;code&gt;general_comments_create_link&lt;/code&gt;, dan wordt er een fout geregistreerd. Dit gebeurt omdat deze code koppelingen (hyperlinks) gebruikt, die zouden moeten refereren naar geïnstalleerde &lt;code&gt;general-comments&lt;/code&gt; instances.

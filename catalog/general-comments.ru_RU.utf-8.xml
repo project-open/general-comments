@@ -37,7 +37,6 @@
   <msg key="gc_is_not_mounted">пакет gc не смонтирован</msg>
   <msg key="General_Comments">Общие комментарии</msg>
   <msg key="Go_back_to_comment">Вернуться к комментарию</msg>
-  <msg key="Has_live_version">Имеет опубликованную версию</msg>
   <msg key="HTML">HTML</msg>
   <msg key="ID">ID#</msg>
   <msg key="if_general_comments_not_mounted">Если &lt;code&gt;general-comments&lt;/code&gt; не смонтирован и вызываются &lt;code&gt;general_comments_get_comments&lt;/code&gt; или &lt;code&gt;general_comments_create_link&lt;/code&gt; , то при этом в лог записывается ошибка. Это происходит из-за того, что данные вызовы создают гиперссылки, которые должны указывать на смонтированный экземпляр пакета &lt;code&gt;general-comments&lt;/code&gt;.</msg>
