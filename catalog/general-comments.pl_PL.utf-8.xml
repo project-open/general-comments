@@ -40,10 +40,6 @@
   <msg key="Has_live_version">Ma wersję aktywną</msg>
   <msg key="HTML">HTML</msg>
   <msg key="ID">ID#</msg>
-  <msg key="if_general_comments_not_mounted">Jeśli  &amp;lt;code&amp;gt;general-comments&amp;lt;/code&amp;gt; 
-jest niezamontowane i wywoływane są procedury 
-&amp;lt;code&amp;gt;general_comments_get_comments&amp;lt;/code&amp;gt; 
-    lub &amp;lt;code&amp;gt;general_comments_create_link&amp;lt;/code&amp;gt; , wtedy wystąpi błąd, który zostanie zapisany w logu. Powodem jest to, że powyższe wywołania zwracają hiperlinki do zamontowanej instancji pakiegu &amp;lt;code&amp;gt;general-comments&amp;lt;/code&amp;gt; .</msg>
   <msg key="Image_attachment">Zdjęcie/Rysunek</msg>
   <msg key="Label">Etykieta:</msg>
   <msg key="last_24_hours">ostatnich 24 godzin</msg>
