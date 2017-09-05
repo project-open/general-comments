@@ -19,6 +19,7 @@
   <msg key="Cancel">Annuleren</msg>
   <msg key="Comment">Opmerking:</msg>
   <msg key="Comments">Opmerkingen</msg>
+  <msg key="Comments_of">Opmerkingen van %user_name%</msg>
   <msg key="Confirm">Bevestigen</msg>
   <msg key="Confirm_comment">Opmerking bevestigen</msg>
   <msg key="Confirm_comment_on">Opmerking bevestigen over </msg>
