@@ -37,6 +37,7 @@
   <msg key="gc_is_not_mounted">gc-pakettia ei ole mountattu</msg>
   <msg key="General_Comments">Yleiset kommentit</msg>
   <msg key="Go_back_to_comment">Palaa takaisin kommenttiin</msg>
+  <msg key="Has_live_version">Sisältää näkyvissä olevan version</msg>
   <msg key="HTML">HTML</msg>
   <msg key="ID">ID#</msg>
   <msg key="Image_attachment">Kuvaliitetiedosto</msg>
@@ -63,6 +64,6 @@
   <msg key="lt_has_chosen_to_limit_a">on suuressa viisaudessaan päättänyt rajoittaa liitteiden koon</msg>
   <msg key="lt_Here_is_how_your_comm">Kommenttisi näyttäisi tältä:</msg>
   <msg key="lt_I_would_like_to_uploa">Haluan liittää tiedoston tai linkin kommenttiini</msg>
-  <msg key="lt_Note_if_the_text_abov">Huom: Jos kaikki kappalevaihdot ovat hävinneet tekstistäsi, sinun kannattaisi valita muodoksi &#34;Pelkkä teksti&#34; HTML-merkkauksen sijaan. Voit palata selaimesi Back-napilla takaisin syöttölomakkeeseen.</msg>
+  <msg key="lt_Note_if_the_text_abov">Huom: Jos kaikki kappalevaihdot ovat hävinneet tekstistäsi, sinun kannattaisi valita muodoksi &quot;Pelkkä teksti&quot; HTML-merkkauksen sijaan. Voit palata selaimesi Back-napilla takaisin syöttölomakkeeseen.</msg>
   <msg key="lt_Your_file_is_too_larg">Tiedostosi on liian suuri.</msg>
 </message_catalog>

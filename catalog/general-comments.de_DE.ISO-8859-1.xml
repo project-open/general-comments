@@ -5,13 +5,13 @@
   <msg key="Add_a_comment_to">Kommentar hinzufügen zu</msg>
   <msg key="Add_comment">Kommentar hinzufügen</msg>
   <msg key="Add_file_attachment">Datei anhängen</msg>
-  <msg key="Add_url_comment">Neuer URL Kommentar</msg>
+  <msg key="Add_url_comment">Kommentar zur URL hinzufügen</msg>
   <msg key="Administer">Verwalten</msg>
   <msg key="all">Alle</msg>
   <msg key="approve">Freigeben</msg>
   <msg key="Approved">Freigegeben</msg>
   <msg key="approved">Freigegeben</msg>
-  <msg key="Attach_a_web_link">Web Link anhängen</msg>
+  <msg key="Attach_a_web_link">URL anhängen</msg>
   <msg key="Attachments">Anhänge</msg>
   <msg key="Author">Verfasser</msg>
   <msg key="by">Von</msg>

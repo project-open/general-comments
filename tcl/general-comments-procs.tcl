@@ -34,11 +34,15 @@ ad_proc general_comment_new {
     
     @error 
 } {
+
+    # Generate a unique id for the message
+    # result from proc comes enveloped in <>
+    set rfc822_id [string range [acs_mail_lite::generate_message_id] 1 end-1]
     
     db_transaction {
         
-        db_exec_plsql insert_comment { }
-        db_dml add_entry { }
+        db_exec_plsql insert_comment {}
+        db_dml add_entry {}
         db_1row get_revision {}  
         db_dml set_content {} -blobs [list $content]
 

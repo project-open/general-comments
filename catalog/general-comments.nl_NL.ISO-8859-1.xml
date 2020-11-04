@@ -19,7 +19,6 @@
   <msg key="Cancel">Annuleren</msg>
   <msg key="Comment">Opmerking:</msg>
   <msg key="Comments">Opmerkingen</msg>
-  <msg key="Comments_of">Opmerkingen van %user_name%</msg>
   <msg key="Confirm">Bevestigen</msg>
   <msg key="Confirm_comment">Opmerking bevestigen</msg>
   <msg key="Confirm_comment_on">Opmerking bevestigen over </msg>
@@ -38,6 +37,7 @@
   <msg key="gc_is_not_mounted">Algemene Opmerkingen module(General Comments) is niet geinstalleerd</msg>
   <msg key="General_Comments">Algemene Opmerkingen</msg>
   <msg key="Go_back_to_comment">Ga terug naar opmerking</msg>
+  <msg key="Has_live_version">Openbare versie is aanwezig</msg>
   <msg key="HTML">HTML</msg>
   <msg key="ID">ID#</msg>
   <msg key="if_general_comments_not_mounted">Als &lt;code&gt;general-comments&lt;/code&gt; niet geactiveerd is en er toch een beroep wordt gedaan op &lt;code&gt;general_comments_get_comments&lt;/code&gt; of &lt;code&gt;general_comments_create_link&lt;/code&gt;, dan wordt er een fout geregistreerd. Dit gebeurt omdat deze code koppelingen (hyperlinks) gebruikt, die zouden moeten refereren naar geïnstalleerde &lt;code&gt;general-comments&lt;/code&gt; instances.
@@ -69,18 +69,18 @@
   <msg key="lt_No_comments_available">Geen opmerkingen beschikbaar</msg>
   <msg key="lt_no_gc_package_instanc">geen instance van Algemene Opmerkingen module (General Comments)</msg>
   <msg key="lt_Note_if_the_text_abov">Toelichting: 
-als de paragraafindeling van bovenstaande tekst is verstoord, dan had u waarschijnlijk beter &#34;Platte Tekst&#34; dan &#34;HTML&#34; kunnen kiezen. 
+als de paragraafindeling van bovenstaande tekst is verstoord, dan had u waarschijnlijk beter &quot;Platte Tekst&quot; dan &quot;HTML&quot; kunnen kiezen. 
 
-Gebruik de knop &#34;Terug&#34; van uw browser om dit te corrigeren. </msg>
+Gebruik de knop &quot;Terug&quot; van uw browser om dit te corrigeren. </msg>
   <msg key="lt_Note_if_the_text_abov_1">Toelichting: 
-als bovenstaande tekst HTML tags bevat, dan had u waarschijnlijk &#34;HTML&#34; moeten kiezen in plaats van &#34;Platte Tekst&#34;. 
+als bovenstaande tekst HTML tags bevat, dan had u waarschijnlijk &quot;HTML&quot; moeten kiezen in plaats van &quot;Platte Tekst&quot;. 
 
-Gebruik de knop &#34;Terug&#34; van uw browser om dit te corrigeren. </msg>
+Gebruik de knop &quot;Terug&quot; van uw browser om dit te corrigeren. </msg>
   <msg key="lt_Test_page_for_General">Testpagina voor Algemene Opmerkingen</msg>
   <msg key="lt_The_comment_id_does_n">Het commentaar_id verwijst niet naar een geldige opmerking. </msg>
   <msg key="lt_This_revision_is_live">Deze versie is openbaar.</msg>
   <msg key="lt_This_revision_is_not_">Deze versie is niet openbaar.</msg>
-  <msg key="lt_Use_the_Browse_button">De knop \&#34;Bladeren\&#34; gebruiken om een bestand te vinden en dan op \&#34;Openen\&#34; klikken</msg>
+  <msg key="lt_Use_the_Browse_button">De knop \&quot;Bladeren\&quot; gebruiken om een bestand te vinden en dan op \&quot;Openen\&quot; klikken</msg>
   <msg key="lt_Your_file_is_too_larg">Het bestand is te groot.</msg>
   <msg key="lt_Your_file_is_zero-len">De omvang van het bestand is nul.
 Het kan zijn dat er een bestand werd aangeboden dat niet bestaat of er is iets misgegaan tijdens de overdracht. </msg>

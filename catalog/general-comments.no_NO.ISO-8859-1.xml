@@ -37,6 +37,7 @@
   <msg key="gc_is_not_mounted">gc er ikke tilkoblet</msg>
   <msg key="General_Comments">Generelle kommentarer</msg>
   <msg key="Go_back_to_comment">Gå tilbake til kommentarer</msg>
+  <msg key="Has_live_version">Har aktiv versjon</msg>
   <msg key="HTML">HTML</msg>
   <msg key="ID">ID#</msg>
   <msg key="if_general_comments_not_mounted">Dersom &lt;code&gt;general-comments&lt;/code&gt; ikke er montert og kall blir gjort til &lt;code&gt;general_comments_get_comments&lt;/code&gt; eller &lt;code&gt;general_comments_create_link&lt;/code&gt; , vil en feil bli logget. Grunnen er at disse kallene legger ut hyperlenker som må referere en montert &lt;/code&gt; pakke-instans. </msg>
@@ -66,13 +67,13 @@
   <msg key="lt_I_would_like_to_uploa">Jeg vil legge ved en fil eller en web-adresse til kommentaren min</msg>
   <msg key="lt_No_comments_available">Ingen kommentarer tilgjengelig</msg>
   <msg key="lt_no_gc_package_instanc">no gc package instance </msg>
-  <msg key="lt_Note_if_the_text_abov">Obs: dersom teksten over har mistet alle sine linjeskift, har du sannsynligvis valgt &#34;Enkel tekst&#34; i stedet for HTML. Bruk tilbake-knappen på nettleseren for å komme tilbake til innsendelsesskjemaet.</msg>
-  <msg key="lt_Note_if_the_text_abov_1">Obs: dersom teksten over har en rekke synlige HTML-tagger, skulle du sannsynligvis ha valgt &#34;HTML&#34; i stedet for &#34;Enkel tekst&#34;. Bruk tilbake-knappen på nettleseren for å komme tilbake til innsendelsesskjemaet.</msg>
+  <msg key="lt_Note_if_the_text_abov">Obs: dersom teksten over har mistet alle sine linjeskift, har du sannsynligvis valgt &quot;Enkel tekst&quot; i stedet for HTML. Bruk tilbake-knappen på nettleseren for å komme tilbake til innsendelsesskjemaet.</msg>
+  <msg key="lt_Note_if_the_text_abov_1">Obs: dersom teksten over har en rekke synlige HTML-tagger, skulle du sannsynligvis ha valgt &quot;HTML&quot; i stedet for &quot;Enkel tekst&quot;. Bruk tilbake-knappen på nettleseren for å komme tilbake til innsendelsesskjemaet.</msg>
   <msg key="lt_Test_page_for_General">Test-side for generelle kommentarer</msg>
   <msg key="lt_The_comment_id_does_n">Kommentar-ID viser ikke til en gyldig kommentar.</msg>
   <msg key="lt_This_revision_is_live">Dette utgaven er på luften.</msg>
   <msg key="lt_This_revision_is_not_">Denne utgaven er ikke på luften.</msg>
-  <msg key="lt_Use_the_Browse_button">Bruk &#34;List...&#34;-knappen til å finne filen din, og klikk &#34;Åpne&#34;.</msg>
+  <msg key="lt_Use_the_Browse_button">Bruk &quot;List...&quot;-knappen til å finne filen din, og klikk &quot;Åpne&quot;.</msg>
   <msg key="lt_Your_file_is_too_larg">Filen din er for stor.</msg>
   <msg key="lt_Your_file_is_zero-len">Filen din har null lengde. Enten har du prøvd å laste opp en fil med null lengde, en fil som ikke eksisterer, eller noe kan ha gått galt under overføringen.</msg>
   <msg key="no_attachments">ingen vedlegg</msg>
